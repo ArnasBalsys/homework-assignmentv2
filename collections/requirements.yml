@@ -1,0 +1,4 @@
+---
+collections:
+  - name: community.rabbitmq
+    source: https://galaxy.ansible.com

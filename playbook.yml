@@ -9,6 +9,3 @@
   roles:
     - name: rabbitmq-task
       when: ansible_os_family == 'Debian'
-  collections:
-    - name: community.rabbitmq
-      source: https://galaxy.ansible.com
