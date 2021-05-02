@@ -6,7 +6,7 @@
     protocol: tcp
     source: localhost
     destination_port: 15672
-    ctstate: NEW, ESTABLISHED
+    ctstate: NEW,ESTABLISHED
     jump: ACCEPT
 
 - name: Allow localhost default port
