@@ -1,4 +1,14 @@
 ---
+- name: Allow public access to the console
+  ansible.builtin.iptables:
+    chain: INPUT
+    action: insert
+    protocol: tcp
+    source: localhost
+    destination_port: 15672
+    ctstate: NEW, ESTABLISHED
+    jump: ACCEPT
+
 - name: Allow localhost default port
   ansible.builtin.iptables:
     chain: INPUT
