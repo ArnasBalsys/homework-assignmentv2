@@ -28,11 +28,11 @@
   lineinfile:
     path: /usr/lib/systemd/system/rabbitmq-server.service
     regexp: '^LimitNOFILE='
-    firstmatch: yes
+    firstmatch: true
     line: LimitNOFILE=300000
 
 - name: Restart rabbitmq-service
   ansible.builtin.systemd:
     state: restarted
-    daemon_reload: yes
+    daemon_reload: true
     name: rabbitmq-server.service
