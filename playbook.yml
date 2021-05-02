@@ -2,6 +2,7 @@
 - name: Launch the role
   hosts: localhost
   user: root
+  ignore_errors: true
   vars_files:
     - rabbitmq-task/vars/vault.yml
     - rabbitmq-task/vars/main.yml
