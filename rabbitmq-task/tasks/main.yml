@@ -1,14 +1,14 @@
 ---
-- name: Install and configure Rabbitmq service
-  import_tasks: install_rabbitmq.yml
+ - name: Install and configure Rabbitmq service
+   import_tasks: install_rabbitmq.yml
 
-- name: Install and configure Rabbitmq service
-  import_tasks: configure_rabbitmq.yml
+ - name: Install and configure Rabbitmq service
+   import_tasks: configure_rabbitmq.yml
 
-- name: Configure network
-  import_tasks: iptables.yml
+ - name: Configure network
+   import_tasks: iptables.yml
 
-- name: Execute publisher script
-  script: publish.py
-  args:
-    executable: python3
+ - name: Execute publisher script
+   script: publish.py
+   args:
+     executable: python3
