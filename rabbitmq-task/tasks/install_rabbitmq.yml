@@ -12,8 +12,7 @@
 - name: Add RabbitMQ repository
   template:
     src: "{{ rabbitmq_deb_repo_tpl }}"
-    dest: >
-      "/etc/apt/sources.list.d/\
+    dest: "/etc/apt/sources.list.d/\
       {{ rabbitmq_deb_repo_tpl | basename | regex_replace('\\.j2$', '') }}"
     force: true
     mode: 0644
@@ -22,8 +21,7 @@
 - name: Add RabbitMQ repository pinning preferences
   template:
     src: "{{ rabbitmq_deb_pinning_tpl }}"
-    dest: >
-      "/etc/apt/preferences.d/\
+    dest: "/etc/apt/preferences.d/\
       {{ rabbitmq_deb_pinning_tpl | basename | regex_replace('\\.j2$', '') }}"
     force: true
     mode: 0644
@@ -36,7 +34,6 @@
 
 - name: Install RabbitMQ
   apt:
-    package: >
-      "rabbitmq-server{{ rabbitmq_series_deb_version |\
+    package: "rabbitmq-server{{ rabbitmq_series_deb_version |\
       ternary ('=' + (rabbitmq_series_deb_version | string),'') }}"
     state: present
