@@ -1,0 +1,38 @@
+---
+- name: Enables the rabbitmq_management plugin
+  community.rabbitmq.rabbitmq_plugin:
+    names: rabbitmq_management
+    state: enabled
+
+- name: Remove guest user
+  community.rabbitmq.rabbitmq_user:
+    user: guest
+    state: absent
+
+- name: Ensure that the vhost /sample exists
+  community.rabbitmq.rabbitmq_vhost:
+    name: /sample
+    state: present
+
+- name: Create a user and assign to a vhost
+  community.rabbitmq.rabbitmq_user:
+    user: arnas
+    password: "{{ user_credentials }}"
+    vhost: /sample
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
+
+- name: Make sure the adjusted entry in rabbitmq-server.service exists
+  lineinfile:
+    path: /usr/lib/systemd/system/rabbitmq-server.service
+    regexp: '^LimitNOFILE='
+    firstmatch: yes
+    line: LimitNOFILE=300000
+
+- name: Restart rabbitmq-service
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: yes
+    name: rabbitmq-server.service

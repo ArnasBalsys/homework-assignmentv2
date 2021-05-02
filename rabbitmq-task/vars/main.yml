@@ -1,0 +1,3 @@
+---
+# vars file for rabbitmq-task
+user_credentials: "{{ vault_user_credentials }}"

@@ -1,0 +1,10 @@
+---
+- name: Launch the role
+  hosts: localhost
+  user: root
+  vars_files:
+    - rabbitmq-task/vars/vault.yml
+    - rabbitmq-task/vars/main.yml
+  roles:
+    - name: rabbitmq-task
+      when: ansible_os_family == 'Debian'
