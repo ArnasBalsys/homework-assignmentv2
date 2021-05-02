@@ -6,9 +6,9 @@
   vars_files:
     - rabbitmq-task/vars/vault.yml
     - rabbitmq-task/vars/main.yml
-  collections:
-    - name: community.rabbitmq
-      source: https://galaxy.ansible.com
   roles:
     - name: rabbitmq-task
       when: ansible_os_family == 'Debian'
+  collections:
+    - name: community.rabbitmq
+      source: https://galaxy.ansible.com
