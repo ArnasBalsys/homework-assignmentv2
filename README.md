@@ -1,14 +1,18 @@
 # homework-assignmentv2
 
-Ansible role to install and configure RabbitMQ
+Ansible role to install and configure RabbitMQ for Debian OS
 
 
 Example Playbook
 --------------
 
-To run this role you can use a sample playbook that is designed to run on localhost
+To run launch role you can use a sample playbook that is designed to run on localhost
      
     ansible-playbook --ask-vault-pass playbook.yml 
+
+This role also performs an installation for yamllint. The files can be verified using
+
+     yamllint path_to_file
 
       
 Role Variables
