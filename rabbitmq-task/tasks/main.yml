@@ -12,6 +12,10 @@
   pip:
     name: pika
 
+- name: Install yamllint
+  apt:
+    package: yamllint
+
 - name: Execute publisher script
   script: publish.py
   args:
