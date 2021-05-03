@@ -22,6 +22,10 @@ Available variables described in defaults/main.yml
 
 RabbitMQ repository & GPG signing key url:
 
-    rabbitmq_deb_repo_url: https://dl.bintray.com/rabbitmq/debian
-    rabbitmq_deb_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+     rabbitmq_deb_url: "https://packagecloud.io/rabbitmq/rabbitmq-server/packages/
+     rabbitmq_deb_gpg_url: https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
 
+Requirements
+--------------
+
+     ansible-galaxy install -r collections/requirements.yml
