@@ -1,0 +1,19 @@
+---
+- name: Download erlang-solutions
+  get_url:
+    url: "{{ erlang_deb_url }}"
+    dest: "/tmp/erlang-solutions_2.0_all.deb"
+
+- name: Install erlang-solutions
+  dpkg_selections:
+    name: "/tmp/erlang-solutions_2.0_all.deb"
+    selection: install
+
+- name: Update cache
+  apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install Erlang package
+  apt:
+    name: erlang
