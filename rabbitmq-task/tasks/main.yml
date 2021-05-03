@@ -1,4 +1,7 @@
 ---
+- name: Install Erlang
+  import_tasks: install_erlang.yml
+
 - name: Install and configure Rabbitmq service
   import_tasks: install_rabbitmq.yml
 
