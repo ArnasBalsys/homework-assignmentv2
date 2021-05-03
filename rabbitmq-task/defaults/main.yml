@@ -1,9 +1,8 @@
 ---
-rabbitmq_series: 3.7
-rabbitmq_series_rpm_version:
+rabbitmq_series: 3.8
 rabbitmq_series_deb_version:
 
-rabbitmq_deb_repo_url: https://dl.bintray.com/rabbitmq/debian
-rabbitmq_deb_gpg_url: https://dl.bintray.com/rabbitmq/Keys/rabbitmq-release-signing-key.asc
+rabbitmq_deb_repo_url: https://packagecloud.io/rabbitmq/rabbitmq-server/packages/
+rabbitmq_deb_gpg_url: https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
 rabbitmq_deb_repo_tpl: etc/apt/sources.list.d/rabbitmq.list.j2
 rabbitmq_deb_pinning_tpl: etc/apt/preferences.d/rabbitmq.j2
