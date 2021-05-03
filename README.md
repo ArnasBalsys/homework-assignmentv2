@@ -20,12 +20,12 @@ Role Variables
 Available variables described in defaults/main.yml
 
 
-RabbitMQ & Erlang repository, GPG signing key url:
+RabbitMQ & Erlang repository, GPG signing key url locations:
 
-     rabbitmq_deb_url: "https://packagecloud.io/rabbitmq/rabbitmq-server/packages/
+     rabbitmq_deb_url: https://packagecloud.io/rabbitmq/rabbitmq-server/packages/
      rabbitmq_deb_gpg_url: https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
 
-     erlang_repo_url: http://packages.erlang-solutions.com/debian
+     erlang_repo_url: http://packages.erlang-solutions.com/debian/
      erlang_deb_gpg_url: http://packages.erlang-solutions.com/debian/erlang_solutions.asc
 
 Requirements
