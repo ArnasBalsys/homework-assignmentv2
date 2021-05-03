@@ -1,5 +1,5 @@
 ---
-rabbitmq_version: "3.8.6"
+rabbitmq_version: "3.8.13"
 
 erlang_deb_gpg_url: http://packages.erlang-solutions.com/debian/erlang_solutions.asc
 erlang_repo_url: http://packages.erlang-solutions.com/debian
