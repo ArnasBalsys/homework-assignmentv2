@@ -8,9 +8,10 @@
 - name: Add Erlang Solutions repository
   become: true
   apt_repository:
-    repo: 'deb {{ erlang_repo_url }} {{ ansible_distribution_release|lower }} contrib'
+    repo:
+      'deb {{ erlang_repo_url }}\
+      {{ ansible_distribution_release|lower }} contrib'
     state: present
-
 
 - name: Install Erlang packages
   become: true
