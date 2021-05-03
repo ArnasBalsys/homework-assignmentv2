@@ -1,20 +1,21 @@
 ---
 - name: Install Erlang Solutions PGP key
-  become: yes
+  become: true
   apt_key:
     url: "{{ erlang_deb_gpg_url }}"
     state: present
 
 - name: Add Erlang Solutions repository
-  become: yes
+  become: true
   apt_repository:
-    repo: 'deb {{ erlang_repo_url }} {{ ansible_distribution_release|lower }} contrib'
+    repo: 'deb {{ erlang_repo_url }} \
+      {{ ansible_distribution_release|lower }} contrib'
     state: present
 
 
 - name: Install Erlang packages
-  become: yes
+  become: true
   apt:
     name: erlang
     state: present
-    update_cache: yes
+    update_cache: true
