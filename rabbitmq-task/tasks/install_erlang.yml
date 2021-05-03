@@ -1,19 +1,20 @@
 ---
-- name: Download erlang-solutions
-  get_url:
-    url: "{{ erlang_deb_url }}"
-    dest: "/tmp/erlang-solutions_2.0_all.deb"
+- name: Install Erlang Solutions PGP key
+  become: yes
+  apt_key:
+    url: "{{ erlang_deb_gpg_url }}"
+    state: present
 
-- name: Install erlang-solutions
-  dpkg_selections:
-    name: "/tmp/erlang-solutions_2.0_all.deb"
-    selection: install
+- name: Add Erlang Solutions repository
+  become: yes
+  apt_repository:
+    repo: 'deb {{ erlang_repo_url }} {{ ansible_distribution_release|lower }} contrib'
+    state: present
 
-- name: Update cache
-  apt:
-    update_cache: true
-  changed_when: false
 
-- name: Install Erlang package
+- name: Install Erlang packages
+  become: yes
   apt:
     name: erlang
+    state: present
+    update_cache: yes
